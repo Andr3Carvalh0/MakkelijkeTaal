@@ -1,0 +1,19 @@
+{
+  "name": "makkelijketaal",
+  "version": "2.0.0",
+  "description": "A utility to download the latest NOS Journaal in Makkelijke Taal as audio only and publish it as an Podcast episode",
+  "main": "src/index.js",
+  "scripts": {
+    "main": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "author": "André Carvalho",
+  "license": "ISC",
+  "dependencies": {
+    "get-audio-duration": "4.0.1",
+    "node-fetch": "3.3.2",
+    "rss-parser": "3.13.0",
+    "youtube-dl-exec": "3.0.20"
+  }
+}

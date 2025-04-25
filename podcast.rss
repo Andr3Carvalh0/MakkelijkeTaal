@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:anchor="https://anchor.fm/xmlns">
+	<channel>
+		<title>NOS Journaal in Makkelijke Taal</title>
+		<description>Elke werkdag is hier het Journaal in Makkelijke Taal te zien. Een journaal voor iedereen die graag op de hoogte blijft, maar voor wie het lastig is om het nieuws te volgen. In elke journaal worden drie onderwerpen verteld met extra uitleg bij het nieuws.</description>
+		<link>https://www.youtube.com/nosnieuwsvandeweek</link>
+		<image>
+			<url>https://bitbucket.org/thelifeofcarv/makkelijketaal/raw/main/resources/UCch2JvY2ZSwcjf5gb93HGQw.jpg</url>
+			<title>NOS Journaal in Makkelijke Taal</title>
+			<link>https://www.youtube.com/nosnieuwsvandeweek</link>
+		</image>
+		<author>NOS</author>
+		<copyright>© All rights reserved</copyright>
+		<language>nl</language>
+		<atom:link href="https://bitbucket.org/thelifeofcarv/makkelijketaal/raw/main/podcast.rss" rel="self" type="application/rss+xml"/>
+		<itunes:author>NOS</itunes:author>
+		<itunes:summary>Elke werkdag is hier het Journaal in Makkelijke Taal te zien. Een journaal voor iedereen die graag op de hoogte blijft, maar voor wie het lastig is om het nieuws te volgen. In elke journaal worden drie onderwerpen verteld met extra uitleg bij het nieuws.</itunes:summary>
+		<itunes:type>episodic</itunes:type>
+		<itunes:owner>
+			<itunes:name>NOS</itunes:name>
+		</itunes:owner>
+		<itunes:explicit>false</itunes:explicit>
+		<itunes:category text="News"/>
+		<itunes:image href="https://bitbucket.org/thelifeofcarv/makkelijketaal/raw/main/resources/UCch2JvY2ZSwcjf5gb93HGQw.jpg"/>
+	</channel>
+</rss>

@@ -1,0 +1,34 @@
+import { invoke as AddEpisodeToRSSFeed } from './rss/AddEpisodeToRSSFeedUseCase.js'
+import { invoke as DownloadYouTubeItemAsAudio } from './youtube/DownloadYouTubeItemAsAudioUseCase.js'
+import { invoke as DeleteFilesInDirectory } from './utilities/DeleteFilesInDirectoryUseCase.js'
+import { invoke as GetAudioDuration } from './utilities/GetAudioDurationUseCase.js'
+import { invoke as GetFileSize } from './utilities/GetFileSizeUseCase.js'
+import { invoke as GetLatestYouTubeItem } from './youtube/GetLatestYouTubeItemUseCase.js'
+import { DOWNLOAD_FOLDER } from "./common/Constants.js"
+
+const CHANNEL_ID = "UCch2JvY2ZSwcjf5gb93HGQw"
+const DEFAULT_ARTWORK = "UCch2JvY2ZSwcjf5gb93HGQw.jpg"
+
+const download = async () => {
+    const metadata = await GetLatestYouTubeItem(CHANNEL_ID)
+    const path = await DownloadYouTubeItemAsAudio(metadata.id, metadata.resource)
+
+    const transformedMetadata = {
+        'id': metadata.id,
+        'title': metadata.title,
+        'description': metadata.description,
+        'artwork': DEFAULT_ARTWORK,
+        'thumbnail': metadata.thumbnail,
+        'duration': await GetAudioDuration(path),
+        'size': await GetFileSize(path),
+        'publishedDate': new Date(metadata.publishedDate).toUTCString()
+    }
+
+    await AddEpisodeToRSSFeed(transformedMetadata)
+    await DeleteFilesInDirectory(DOWNLOAD_FOLDER, [DEFAULT_ARTWORK])
+}
+
+const main = async () => { await download() }
+
+main().then(() => console.log("A new episode is available!"))
+    .catch((err) => console.log(err))
