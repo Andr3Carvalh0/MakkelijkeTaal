@@ -1,8 +1,13 @@
 #!/usr/bin/env sh
+echo "$(date)"
+
 git fetch --all
 git reset --hard origin/main
 
-npm install && npm run main
+rm -rf node_modules
+
+npm install
+npm run main
 
 git add .
 if [[ -n "$(git status --porcelain)" ]]; then
