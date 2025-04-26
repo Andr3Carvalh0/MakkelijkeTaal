@@ -3,7 +3,7 @@ import { BITBUCKET_BUCKET, FEED_PATH, FILE_EXTENSION } from "../common/Constants
 
 export const invoke = async (metadata) => {
     const feed = await fs.readFile(FEED_PATH, { encoding: 'utf8' })
-    const podcastArtwork = `<itunes:image href="${BITBUCKET_BUCKET}/resources/${metadata.artwork}"/>`
+    const podcastArtwork = `<itunes:image href="${BITBUCKET_BUCKET}/${metadata.artwork}"/>`
 
     const header = feed.split(podcastArtwork)[0]
     const body = feed.split(podcastArtwork)[1]

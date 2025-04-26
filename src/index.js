@@ -4,10 +4,7 @@ import { invoke as DeleteFilesInDirectory } from './utilities/DeleteFilesInDirec
 import { invoke as GetAudioDuration } from './utilities/GetAudioDurationUseCase.js'
 import { invoke as GetFileSize } from './utilities/GetFileSizeUseCase.js'
 import { invoke as GetLatestYouTubeItem } from './youtube/GetLatestYouTubeItemUseCase.js'
-import { DOWNLOAD_FOLDER } from "./common/Constants.js"
-
-const CHANNEL_ID = "UCch2JvY2ZSwcjf5gb93HGQw"
-const DEFAULT_ARTWORK = "UCch2JvY2ZSwcjf5gb93HGQw.jpg"
+import { CHANNEL_ID, DEFAULT_ARTWORK, DOWNLOAD_FOLDER } from "./common/Constants.js"
 
 const download = async () => {
     const metadata = await GetLatestYouTubeItem(CHANNEL_ID)
@@ -25,7 +22,7 @@ const download = async () => {
     }
 
     await AddEpisodeToRSSFeed(transformedMetadata)
-    await DeleteFilesInDirectory(DOWNLOAD_FOLDER, [DEFAULT_ARTWORK])
+    await DeleteFilesInDirectory(DOWNLOAD_FOLDER, [])
 }
 
 const main = async () => { await download() }
