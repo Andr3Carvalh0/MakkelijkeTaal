@@ -5,7 +5,7 @@ RUN rm -rf /opt/yarn-*
 
 RUN apk update && apk add git ffmpeg python3
 
-ARG SCHEDULE="* */4 * * Mon-Fri"
+ARG SCHEDULE="* */6 * * *"
 ARG REPO_SLUG="makkelijketaal"
 ARG WORKSPACE="thelifeofcarv"
 ARG AUTHENTICATION
