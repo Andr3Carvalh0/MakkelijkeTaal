@@ -5,7 +5,7 @@ RUN rm -rf /opt/yarn-*
 
 RUN apk update && apk add git ffmpeg python3
 
-ARG SCHEDULE="0 */3 * * *"
+ARG SCHEDULE="*/30 18-20 * * Mon-Fri"
 ARG REPO_SLUG="makkelijketaal"
 ARG WORKSPACE="thelifeofcarv"
 ARG AUTHENTICATION
@@ -21,7 +21,6 @@ ENV REPOSITORY_EMAIL $EMAIL
 WORKDIR /podcasts
 
 COPY run.sh .
-RUN chmod -R 0755 /podcasts
 
 RUN git clone "https://x-token-auth:$REPOSITORY_AUTHENTICATION@bitbucket.org/$REPOSITORY_WORKSPACE/$REPOSITORY_SLUG.git"
 RUN git config --global user.name "$REPOSITORY_USERNAME"
