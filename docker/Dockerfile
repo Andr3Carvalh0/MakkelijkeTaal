@@ -3,7 +3,7 @@ FROM node:23-alpine
 RUN rm /usr/local/bin/yarn && rm /usr/local/bin/yarnpkg
 RUN rm -rf /opt/yarn-*
 
-RUN apk update && apk add git ffmpeg python3
+RUN apk update && apk add curl git ffmpeg python3
 
 ARG SCHEDULE="*/30 18-20 * * Mon-Fri"
 ARG REPO_SLUG="makkelijketaal"
