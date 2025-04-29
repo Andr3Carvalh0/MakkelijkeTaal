@@ -4,7 +4,12 @@ import { invoke as DeleteFilesInDirectory } from './utilities/DeleteFilesInDirec
 import { invoke as GetAudioDuration } from './utilities/GetAudioDurationUseCase.js'
 import { invoke as GetFileSize } from './utilities/GetFileSizeUseCase.js'
 import { invoke as GetLatestYouTubeItem } from './youtube/GetLatestYouTubeItemUseCase.js'
-import { CHANNEL_ID, DEFAULT_ARTWORK, DOWNLOAD_FOLDER } from "./common/Constants.js"
+import {
+    BITBUCKET_PUBLIC_LINK,
+    CHANNEL_ID,
+    DEFAULT_ARTWORK,
+    DOWNLOAD_FOLDER
+} from "./common/Constants.js"
 
 const download = async () => {
     const metadata = await GetLatestYouTubeItem(CHANNEL_ID)
@@ -14,7 +19,7 @@ const download = async () => {
         'id': metadata.id,
         'title': metadata.title,
         'description': metadata.description,
-        'artwork': DEFAULT_ARTWORK,
+        'artwork': `${BITBUCKET_PUBLIC_LINK}/${DEFAULT_ARTWORK}`,
         'thumbnail': metadata.thumbnail,
         'duration': await GetAudioDuration(path),
         'size': await GetFileSize(path),
