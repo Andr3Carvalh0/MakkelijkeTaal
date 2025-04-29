@@ -1,5 +1,5 @@
 import fs from 'fs/promises'
-import { BITBUCKET_BUCKET, FEED_PATH, FILE_EXTENSION } from "../common/Constants.js"
+import { BITBUCKET_PUBLIC_LINK, FEED_PATH, FILE_EXTENSION } from "../common/Constants.js"
 
 export const invoke = async (metadata) => {
     const feed = await fs.readFile(FEED_PATH, { encoding: 'utf8' })
@@ -23,7 +23,7 @@ export const invoke = async (metadata) => {
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:image href="${metadata.thumbnail}"/>
 			<itunes:duration>${metadata.duration}</itunes:duration>
-			<enclosure url="${BITBUCKET_BUCKET}/resources/${metadata.id}${FILE_EXTENSION}" type="audio/mpeg" length="${metadata.size}"/>
+			<enclosure url="${BITBUCKET_PUBLIC_LINK}/${metadata.id}${FILE_EXTENSION}" type="audio/mpeg" length="${metadata.size}"/>
 		</item>${body}`
 
     await fs.writeFile(FEED_PATH, transformedFeed, 'utf8')

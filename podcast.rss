@@ -46,7 +46,7 @@ Het NOS Journaal in Makkelijke Taal wordt van maandag tot en met vrijdag gemaakt
 			<itunes:explicit>false</itunes:explicit>
 			<itunes:image href="https://i2.ytimg.com/vi/a4dCL6YLSTU/hqdefault.jpg"/>
 			<itunes:duration>476</itunes:duration>
-			<enclosure url="https://api.bitbucket.org/2.0/repositories/thelifeofcarv/makkelijketaal/downloads/resources/a4dCL6YLSTU.mp3" type="audio/mpeg" length="4810076"/>
+			<enclosure url="https://bitbucket.org/thelifeofcarv/makkelijketaal/downloads/a4dCL6YLSTU.mp3" type="audio/mpeg" length="4810076"/>
 		</item>
         <item>
 			<title>Vredestein autobandenfabriek gaat dicht, duizenden lintjes uitgereikt en begrafenis van de paus</title>
