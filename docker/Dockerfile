@@ -1,4 +1,5 @@
 FROM node:23-alpine
+LABEL com.centurylinklabs.watchtower.enable="false"
 
 RUN rm /usr/local/bin/yarn && rm /usr/local/bin/yarnpkg
 RUN rm -rf /opt/yarn-*
